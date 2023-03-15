@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    transition: color 500ms ease;
+    color: #6f6f6f;
+}
+
+a:hover {
+    color: #1f1f1f;
+}
+
+.container {
+    width: 1258px;
+    margin: 0 auto ;
+}
+
+header.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background: #fcfcfc;
+    color: #333;
+}
+
+header .logo {
+    color: #222;
+    font-weight: 600;
+    font-size: 56px;
+}
+
+
+:root {
+    --bgcolor: #fcfcfc;
+}
+
+/*навигация*/
+ul {
+    list-style: none;
+}
+h6 {
+    font-size: 2rem;
+    position: relative;
+    text-transform: uppercase;
+    transition: all 300ms ease;
+    width: fit-content;
+    cursor: pointer;
+}
+h6:hover {
+    transform: skew(10deg);
+}
+h6::before {
+    content: attr(data-name);
+    position: absolute;
+    top: 0;
+    left: -20px;
+    background: var(--bgcolor);
+    height: 1.1rem;
+    overflow: hidden;
+    transition: all 300ms ease;
+    padding-left: 20px;
+}
+h6:hover::before {
+    top: 0px;
+    left: -16px;
+    color: deepskyblue;
+}
+
+h6::after {
+    content: "";
+    height: 3px;
+    width: 0;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: deepskyblue;
+    transition: all 300ms ease;
+}
+h6:hover::after {
+    width: 120%;
+    /*outline: 2px solid rgb(2, 0, 36);*/
+}
+/*навигация*/
+
+.presentation {
+    background: url("/img/Newspapers.jpg") no-repeat;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: multiply;
+    background-color: #727272;
+    position: relative;
+}
+
+.presentation::after {
+    content: "Лучшие новости со всего мира";
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    color: #fff;
+    font-size: 45px;
+    font-weight: 600;
+    width: 300px;
+}
+
+.presentation::before {
+    content: "Только самое интересное";
+    position: absolute;
+    top: 270px;
+    left: 50px;
+    color: #d7d7d7;
+    font-size: 15px;
+
+}
+
+div.block {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid silver;
+    border-bottom-width: 2px;
+    background-color: #ebebeb;
+    line-height: 170%;
+}
+
+div.block h1 {
+    margin-bottom: 15px;
+}
+
+div.block ul,
+div.block ol {
+    margin-top: 10px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.news {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20px;
+    border: 1px solid deepskyblue;
+    border-radius: 5px;
+    background-color: #9edbf6;
+    padding: 20px 20px;
+}
+
+
+h1, p {
+    color: #205667;
+    font-weight: 600;
+}
+
+
+/*кнокпи с эффектом неона*/
+.container .btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 50px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 30px;
+}
+.container .btn a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 10px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    color: #205667;
+    font-weight: 600;
+    z-index: 1;
+    transition: 0.5s;
+    backdrop-filter: blur(15px);
+}
+.container .btn:hover a {
+    letter-spacing: 3px;
+}
+.container .btn a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+    transform: skewX(45deg) translate(0);
+    transition: 0.5s;
+    filter: blur(0px);
+}
+.container .btn:hover a::before {
+    transform: skewX(45deg) translate(200px);
+}
+.container .btn::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    bottom: -5px;
+    width: 30px;
+    height: 10px;
+    background: #205667;
+    border-radius: 10px;
+    transition: 0.3s;
+    transition-delay: 0.3s;
+}
+.container .btn:hover::before  {
+    bottom: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+}
+
+.container .btn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    top: -5px;
+    width: 30px;
+    height: 10px;
+    background: #205667;
+    border-radius: 10px;
+    transition: 0.3s;
+    transition-delay: 0.3s;
+}
+.container .btn:hover::after {
+    top: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+}
+.container .btn::before,
+.container .btn::after {
+    background: #FFA400;
+    box-shadow: 0 0 5px #F49D37, 0 0 15px #F49D37, 0 0 30px #F49D37,
+    0 0 60px #F49D37;
+}
+/*кнокпи с эффектом неона*/
+
+
+/*статьи*/
+
+.articles {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.articles .post {
+    width: 27%;
+    padding: 20px;
+    background: #f1f1f1;
+    margin-bottom: 20px;
+}
+
+.articles .post img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.post {
+    margin-bottom: 20px;
+    background: #6ab05a;
+}
+.articles .post a,
+.back-button,
+.delete-button,
+header form button{
+    display: inline-block;
+    margin-top: 15px;
+    background: #bebebe;
+    border-radius: 5px;
+    padding: 10px 12px;
+    color: #fff;
+    transition: transform 500ms ease;
+}
+
+.delete-button {
+    border: 0;
+    background: #d45858;
+    cursor: pointer;
+}
+
+.articles .post a:hover,
+.back-button:hover,
+.delete-button:hover
+header form button:hover{
+    transform: scale(1.1) translateY(-2px);
+}
+
+.articles.one .post {
+    width: 100%;
+    border: 1px solid silver;
+    border-bottom-width: 2px;
+}
+
+
+/*форма добавления статей*/
+
+form.article-form {
+    margin-top: 20px;
+}
+
+
+form.article-form label {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+form.article-form input,
+form.article-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+form.article-form input[type='submit'] {
+    margin-top: 20px;
+    cursor: pointer;
+    background: #d45858;
+    width: 100px;
+    color: #fff;
+    border: 0;
+    transition: all 500ms ease;
+}
+form.article-form input[type='submit']:hover {
+    background: #a63f3f;
+}
+
+
+form.article-form input[type='checkbox'] {
+    width: initial;
+}
+
+
+form.article-form .login-btn {
+    display: block;
+}
+
+.comments {
+    width: 100%;
+    background: #f1f1f1;
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.frame_comm {
+    margin-bottom: 20px;
+}
+
+
+
+.comment {
+    width: 100%;
+    background: #333;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 5px;
+
+
+}
+
+.comment p,
+.comment span small,
+.comment span b{
+    color: #fff;
+}
+/*форма добавления статей*/
+
+/*ошибки формы добавления статей*/
+
+.error-mess, .success-mess {
+    width: 30%;
+    padding: 15px 20px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.error-mess {
+    background: #d45858;
+}
+
+.success-mess {
+    background: #6ab05a ;
+}
+/*ошибки формы добавления статей*/
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
